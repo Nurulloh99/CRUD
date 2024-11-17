@@ -1,0 +1,14 @@
+D:\ProjectsWithCsharp\GitProjects\CRUD\CRUD\bin\Debug\net8.0\CRUD.exe
+D:\ProjectsWithCsharp\GitProjects\CRUD\CRUD\bin\Debug\net8.0\CRUD.deps.json
+D:\ProjectsWithCsharp\GitProjects\CRUD\CRUD\bin\Debug\net8.0\CRUD.runtimeconfig.json
+D:\ProjectsWithCsharp\GitProjects\CRUD\CRUD\bin\Debug\net8.0\CRUD.dll
+D:\ProjectsWithCsharp\GitProjects\CRUD\CRUD\bin\Debug\net8.0\CRUD.pdb
+D:\ProjectsWithCsharp\GitProjects\CRUD\CRUD\obj\Debug\net8.0\CRUD.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProjectsWithCsharp\GitProjects\CRUD\CRUD\obj\Debug\net8.0\CRUD.AssemblyInfoInputs.cache
+D:\ProjectsWithCsharp\GitProjects\CRUD\CRUD\obj\Debug\net8.0\CRUD.AssemblyInfo.cs
+D:\ProjectsWithCsharp\GitProjects\CRUD\CRUD\obj\Debug\net8.0\CRUD.csproj.CoreCompileInputs.cache
+D:\ProjectsWithCsharp\GitProjects\CRUD\CRUD\obj\Debug\net8.0\CRUD.dll
+D:\ProjectsWithCsharp\GitProjects\CRUD\CRUD\obj\Debug\net8.0\refint\CRUD.dll
+D:\ProjectsWithCsharp\GitProjects\CRUD\CRUD\obj\Debug\net8.0\CRUD.pdb
+D:\ProjectsWithCsharp\GitProjects\CRUD\CRUD\obj\Debug\net8.0\CRUD.genruntimeconfig.cache
+D:\ProjectsWithCsharp\GitProjects\CRUD\CRUD\obj\Debug\net8.0\ref\CRUD.dll

@@ -1,0 +1,193 @@
+using System;
+using System.Data;
+using System.Globalization;
+
+namespace _1._5_Hometasks_List___Array
+{
+    internal class Program
+    {	
+
+
+        // DATA BASE
+        public static List<string> PassportSeries = new List<string>();
+
+
+
+        // MAIN PART
+        static void Main(string[] arg)
+        {
+            DataSeed();
+            StartProgram();
+        }
+
+
+        // -------------------------------------------------------------------------------------
+
+
+
+        // ADD SERIES
+        public static int InsertNewSerie(string newValue)
+        {
+            var index = PassportSeries.Contains(newValue);
+            var affectingFormat = FormatSignOfSeries(newValue);
+
+            if (index is true || affectingFormat is false)
+            {
+                return -1;
+            }
+            newValue = newValue.ToUpper();
+
+            PassportSeries.Add(newValue);
+            return PassportSeries.Count-1;
+        }
+
+
+
+        // DELETE SERIES
+        public static bool RemoveInvalidSerie(string deleteValue)
+        {
+            var assist = PassportSeries.Contains(deleteValue);
+            PassportSeries.Remove(deleteValue);
+            return assist;
+        }
+
+
+        // UPDATED SERIES
+        public static bool RemakeOldSerie(string oldString, string newString)
+        {
+            var index = PassportSeries.IndexOf(oldString);
+            var trueFalse = false;
+            var affectingFormat = FormatSignOfSeries(newString);
+
+
+            if (index < 0 || affectingFormat is false)
+            {
+                return trueFalse;
+            }
+
+            newString = newString.ToUpper();
+            PassportSeries[index] = newString;
+            trueFalse = true;
+            return trueFalse;
+            
+        }
+
+
+        // DATA SEED
+        public static void DataSeed()
+        {
+            PassportSeries.Add("AB1254684");
+            PassportSeries.Add("AB4578964");
+            PassportSeries.Add("AB5642137");
+            PassportSeries.Add("AB8975487");
+            PassportSeries.Add("AB3268745");
+            PassportSeries.Add("AB4521354");
+        }
+
+
+        // TAKING BACK FUNCTION
+        public static List<string> GetAndReturn()
+        {
+            return PassportSeries;
+        }
+
+
+        // FORMAT FUNCTION
+        public static bool FormatSignOfSeries(string changableValue)
+        {
+            var firstIndex = changableValue[0] == 'a' || changableValue[0] == 'A';
+            var secondIndex = Char.IsLetter(changableValue[1]);
+            var sizeOfSerie = changableValue.Length == 9;
+
+            var trueFalse = false;
+            var counter = 0;
+
+            for(var i = 2; i < changableValue.Length; i++)
+            {
+                counter++;
+            }
+            if(counter == 7)
+            {
+                trueFalse = true;
+            }
+            return firstIndex && secondIndex && sizeOfSerie && trueFalse;
+        }
+
+
+
+
+        // _____________________________________________________________________________________
+
+
+
+
+
+        // FRONTEND PART
+        public static void StartProgram()
+        {
+            while (true)
+            {
+                Console.WriteLine("        -- OPTIONS --");
+                Console.WriteLine("1. Insert a new Passport serie!");
+                Console.WriteLine("2. Efface an invalid passport serie!");
+                Console.WriteLine("3. Up to date a old passport serie!");
+                Console.WriteLine("4. Popping up all passport series in consol!");
+                Console.Write("Choose >> ");
+                var option = int.Parse(Console.ReadLine());
+                if(option == 1)
+                {
+                    Console.Write("Please enter a new serie which you want >> ");
+                    var uniqueSerie = Console.ReadLine();
+                    var index = InsertNewSerie(uniqueSerie);
+
+                    if(index == -1)
+                    {
+                        Console.WriteLine("404 ERROR");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Serie added successfully >> {index}");
+                    }
+                }else if(option == 2)
+                {
+                    Console.Write("Please enter a passport serie which you want to remove >> ");
+                    var uniqueSerie = Console.ReadLine();
+                    var removingProccess = RemoveInvalidSerie(uniqueSerie);
+
+                    if(removingProccess is true)
+                    {
+                        Console.WriteLine("DELETED");
+                    }
+                    else
+                    {
+                        Console.WriteLine("NOT DELETED");
+                    }
+                }else if(option == 3)
+                {
+                    Console.Write("Enter an old serie >> ");
+                    var firstUpdate = Console.ReadLine();
+                    Console.Write("Enter a new serie >> ");
+                    var secondUpdate = Console.ReadLine();
+                    var UpdatingProccessOfBothSeries = RemakeOldSerie(firstUpdate, secondUpdate);
+
+                    if(UpdatingProccessOfBothSeries is true)
+                    {
+                        Console.WriteLine("Updated");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Not Updated");
+                    }
+                }else if(option == 4)
+                {
+                    var GetSeries = GetAndReturn();
+                    foreach(var num in GetSeries){
+                        Console.WriteLine(num);
+                    }
+                }
+                Console.ReadKey();
+                Console.Clear();
+            }
+        }
+    }
+}
