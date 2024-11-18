@@ -52,8 +52,8 @@
                         Console.WriteLine("  5. Tel raqamni qayerga tegishli ekanligini bilish ...");
                         Console.WriteLine("  6. Tilni tanlash bo'limiga qaytish");
                         Console.Write("Tanlang >> ");
-                        Console.Clear();
                         var option = int.Parse(Console.ReadLine());
+                        Console.Clear();
 
                         if (option == 1)
                         {
